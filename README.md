@@ -1,4 +1,3 @@
-gcconfig.js
-===========
+# gcconfig.js
 
-Configuration.
+A simple configuration library for GC node apps.
