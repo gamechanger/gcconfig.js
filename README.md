@@ -1,0 +1,4 @@
+gcconfig.js
+===========
+
+Configuration.
