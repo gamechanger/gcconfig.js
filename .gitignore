@@ -11,4 +11,13 @@ pids
 logs
 results
 
-npm-debug.log
+*.o
+*.log
+*.a
+.c9revisions
+.DS_Store
+node_modules/*/build/
+node_modules/*/.lock_wscript
+node_modules/*/node_modules/*/build/
+node_modules/*/node_modules/*/.lock_wscript
+tmp
