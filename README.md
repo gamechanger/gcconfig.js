@@ -5,27 +5,33 @@ A simple configuration loader package for GC node.js apps. gcconfig.js uses a co
 ## How to use gcconfig.js
 
 1. Include gcconfig.js in your app project by adding a line to your package.json file:
-```javascript
-    ...
-    "dependencies": {
-        "gcconfig": "git+ssh://git@github.com:gamechanger/gcconfig.js.git"
-    }
-    ...
-```
+
+    ```javascript
+        ...
+        "dependencies": {
+            "gcconfig": "git+ssh://git@github.com:gamechanger/gcconfig.js.git"
+        }
+        ...
+    ```
+
 2. Run `npm install` to install the package into your app's `node_modules`.
 3. Create your app's configuration in <APP DIR>/config or using environment variables as appropriate (see "How gcconfig.js loads config" below).
 4. Within your app, require `gcconfig` and use this object to access your config. For example:
-```javascript
-var config = require('gcconfig');
 
-var db = mongoose.connect(config.database.uri, config.database.port);
-```
+    ```javascript
+    var config = require('gcconfig');
+    
+    var db = mongoose.connect(config.database.uri, config.database.port);
+    ```
 5. You can use gcconfig to get the current application running environment:
-```javascript
-var config = require('gcconfig');
-console.log('Environment is ' + config.env);
-```
-See "Specifying the environment" below.
+
+    ```javascript
+    var config = require('gcconfig');
+    console.log('Environment is ' + config.env);
+    ```
+    
+    See "Specifying the environment" below.
+    
 6. That's it. 
 
 ## How gcconfig.js loads config
