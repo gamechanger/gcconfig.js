@@ -23,6 +23,7 @@ exports.enable = function() {
 
         // Ensure there are no env vars present
         delete process.env.gcenv;
+        delete process.env.NODE_CONFIG_DIR;
         optimist.argv = {};
 
         // Force the env and config modules to be loaded afresh

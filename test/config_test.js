@@ -14,7 +14,6 @@ describe("Config", function() {
     });
 
     it("should return default config if no additional settings provided for env", function() {
-        //console.log(config().env);
         config().database.uri.should.eql("mongodb://localhost/default");
     });
 
@@ -27,5 +26,10 @@ describe("Config", function() {
         process.env.FAKEAPP_DATABASE_URI = "another uri";
         config().database.uri.should.eql("another uri");
         delete process.env.FAKEAPP_DATABASE_URI; // clean up
+    });
+
+    it("should allow the config directory path to be overridden", function() {
+        process.env.NODE_CONFIG_DIR = process.cwd() + '/otherconfig';
+        config().database.uri.should.eql("mongodb://localhost/other");
     });
 });
