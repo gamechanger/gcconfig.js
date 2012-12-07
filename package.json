@@ -1,8 +1,8 @@
 {
-  "name": "config.js",
+  "name": "gcconfig",
   "version": "0.1.0",
-  "description": "GameChanger Configuration API",
-  "main": "index.js",
+  "description": "GameChanger Configuration Loader",
+  "main": "lib/config.js",
   "private": true,
   "author": "Tom Leach",
   "dependencies": {
