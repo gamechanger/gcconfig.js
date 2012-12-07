@@ -1,5 +1,6 @@
 TESTS = $(shell find test -name "*_test.js")
 JSFILES = $(shell find . -name node_modules -prune -o -name fixtures -prune -o -name test -prune -o -name "*.js" -print)
+ARGS = --require should --globals CONFIG
 
 test:
 	./node_modules/.bin/mocha --reporter spec $(ARGS) $(TESTS)
