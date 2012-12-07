@@ -1,6 +1,6 @@
 {
   "name": "gcconfig",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GameChanger Configuration Loader",
   "main": "lib/config.js",
   "private": true,
