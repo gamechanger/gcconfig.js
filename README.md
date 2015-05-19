@@ -1,45 +1,39 @@
 # gcconfig.js
 
-A simple configuration loader package for GC node.js apps. gcconfig.js uses a convention-based approach to detect and load per-environment configuration into an app. 
+A simple configuration loader package for GC node.js apps. gcconfig.js uses a convention-based approach to detect and load per-environment configuration into an app.
 
 ## How to use gcconfig.js
 
-1. Include gcconfig.js in your app project by adding a line to your package.json file:
+1. Install into your project's `node_modules`:
+    ```
+    npm install @gamechanger/config
 
-    ```javascript
-        ...
-        "dependencies": {
-            "gcconfig": "git+ssh://git@github.com:gamechanger/gcconfig.js.git"
-        }
-        ...
     ```
 
-2. Run `npm install` to install the package into your app's `node_modules`.
-3. Create your app's configuration in <APP DIR>/config or using environment variables as appropriate (see "How gcconfig.js loads config" below).
-4. Within your app, require `gcconfig` and use this object to access your config. For example:
+1. Create your app's configuration in <APP DIR>/config or using environment variables as appropriate (see "How gcconfig.js loads config" below).
+1. Within your app, require `@gamechanger/config` and use this object to access your config. For example:
 
     ```javascript
-    var config = require('gcconfig');
-    
+    var config = require('@gamechanger/config');
+
     var db = mongoose.connect(config.database.uri, config.database.port);
     ```
-5. You can use gcconfig to get the current application running environment:
+1. You can use gcconfig to get the current application running environment:
 
     ```javascript
-    var config = require('gcconfig');
+    var config = require('@gamechanger/config');
     console.log('Environment is ' + config.env);
     ```
-    
+
     See "Specifying the environment" below.
-    
-6. That's it. 
+
 
 ## How gcconfig.js loads config
 
 These are the steps gcconfig.js goes through to load application config into a single hash which can be used by the application:
 
- - First it looks for a `default.json` file in the application's config folder and loads the object declared in this file if present. 
- - Next it looks for a JSON config file in the application's config folder which matches the current environment. E.g. if the current environment is "staging", then it will look for `staging.json`. Any provided config is used to override/extend that already loaded. 
+ - First it looks for a `default.json` file in the application's config folder and loads the object declared in this file if present.
+ - Next it looks for a JSON config file in the application's config folder which matches the current environment. E.g. if the current environment is "staging", then it will look for `staging.json`. Any provided config is used to override/extend that already loaded.
  - Finally it looks for any environment variables overrides which have been provided to the application. It does this by checking for environment variables which match existing config keys it has already loaded, based on the naming convention: `<app name>_<key>_<key>..`. e.g. `MYAPP_DATABASE_URI`.
 
 
@@ -55,4 +49,4 @@ gcconfig.js also takes care of determining the current environment and allows yo
 
 ## Development
 
-To run unit tests, first run `npm install` to make sure all dependencies are installed. Then run `make test`. 
+To run unit tests, first run `npm install` to make sure all dependencies are installed. Then run `make test`.

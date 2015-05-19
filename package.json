@@ -1,9 +1,8 @@
 {
-  "name": "gcconfig",
+  "name": "@gamechanger/config",
   "version": "0.1.1",
   "description": "GameChanger Configuration Loader",
   "main": "lib/config.js",
-  "private": true,
   "author": "Tom Leach",
   "dependencies": {
     "underscore": "1.4.x",
