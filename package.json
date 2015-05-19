@@ -1,6 +1,6 @@
 {
   "name": "@gamechanger/config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "GameChanger Configuration Loader",
   "main": "lib/config.js",
   "author": "Tom Leach",
